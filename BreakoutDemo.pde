@@ -230,6 +230,8 @@ class Ball {
     for (int i = 0; i < bricks.size(); i++) {
       if (this.x+rad > bricks.get(i).x && this.x+rad < bricks.get(i).x+bricks.get(i).w && this.y+rad < bricks.get(i).y+bricks.get(i).h) {
         this.directionY *= -1;
+        this.speedX += 0.45;
+        this.speedY -= 0.2;
         bricks.remove(i);
         score++;
       }
@@ -252,6 +254,7 @@ class Ball {
   }
     
   void ball () {
+        
     noStroke();
     fill(255);
     ellipseMode(CENTER);
